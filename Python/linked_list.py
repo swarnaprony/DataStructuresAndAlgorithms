@@ -29,9 +29,11 @@ class LinkedList:
         self.length += 1
         return True   
 
+    def remove():
+        return
+
 
 
 my_linked_list = LinkedList(2)
-print(my_linked_list.head.value)
 my_linked_list.append(3)
 my_linked_list.printList()
