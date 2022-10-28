@@ -126,7 +126,7 @@ class LinkedList:
             temp.next = before
             before = temp
             temp = after
-            
+
 
 
 
@@ -141,5 +141,5 @@ my_linked_list.prepend(1)
 my_linked_list.prepend(0)
 my_linked_list.pop_first()
 my_linked_list.printList()
-print(my_linked_list.remove_item(2), '\n')
+my_linked_list.reverse()
 my_linked_list.printList()
