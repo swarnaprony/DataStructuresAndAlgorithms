@@ -138,6 +138,43 @@ class DoublyLinkedList:
             temp.next  = new_node
             self.length += 1
             return True
+
+        
+    def remove(self, index):
+        temp = self.head
+
+        if index == 0 and self.length == 1:
+            self.head = None
+            self.tail = None
+            return True
+
+        if index == 0:
+            self.head = temp.next
+            self.length -= 1
+            return True
+        if index == self.length-1:
+            for _ in range(index-1):
+                temp = temp.next
+            print(temp.value)
+            temp.next = None
+            self.tail = temp
+            self.length -= 1
+            return True
+
+        if index > 0:
+            temp = self.head
+            next_node = temp.next
+            prev_node = temp.prev
+
+            for _ in range(index-1):
+                temp = temp.next
+                prev_node = temp.prev
+                next_node = temp.next
+            print(next_node.value)
+            temp.prev = prev_node
+            temp.next = next_node.next
+            return True
+
         
         
 
@@ -165,6 +202,9 @@ my_doubly_linked_list.print_list()
 
 
 my_doubly_linked_list.insert(4,4)
+
+
+my_doubly_linked_list.remove(4)
 
 print('\nDLL after insert(4) at end:')
 my_doubly_linked_list.print_list()
