@@ -112,10 +112,16 @@ class DoublyLinkedList:
     def insert(self, index, value):
         new_node = Node(value)
 
-        if index == (self.length -1):
-            temp = self.tail
-            temp.next = new_node
-            self.tail = temp.next
+        if index == 0 and self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+            self.length += 1
+            return True
+
+        if index == 0 and self.length > 0:
+            temp = self.head
+            self.head = new_node
+            self.head.next = temp
             self.length += 1
             return True
 
@@ -127,23 +133,13 @@ class DoublyLinkedList:
                 prev = temp
                 temp = temp.next
                 next = temp.next
-            print(f"value is: {temp.value}")
 
             new_node.next = next
             temp.next  = new_node
             self.length += 1
             return True
-        if index == 0 and self.length == 0:
-            self.head = new_node
-            self.tail = new_node
-            self.length += 1
-            return True
-        if index == 0 and self.length > 0:
-            temp = self.head
-            self.head = new_node
-            self.head.next = temp
-            self.length += 1
-            return True
+        
+        
 
             
 
