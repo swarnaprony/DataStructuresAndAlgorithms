@@ -146,20 +146,23 @@ class DoublyLinkedList:
         if index == 0 and self.length == 1:
             self.head = None
             self.tail = None
-            return True
+            self.length -= 1
+            return temp
 
         if index == 0:
             self.head = temp.next
             self.length -= 1
-            return True
+            return temp
         if index == self.length-1:
+            temp = self.head
+            next_node = temp.next
             for _ in range(index-1):
                 temp = temp.next
-            print(temp.value)
+                next_node = temp.next
             temp.next = None
             self.tail = temp
             self.length -= 1
-            return True
+            return next_node
 
         if index > 0:
             temp = self.head
@@ -170,10 +173,10 @@ class DoublyLinkedList:
                 temp = temp.next
                 prev_node = temp.prev
                 next_node = temp.next
-            print(next_node.value)
             temp.prev = prev_node
             temp.next = next_node.next
-            return True
+            self.length -= 1
+            return next_node
 
         
         
@@ -204,7 +207,7 @@ my_doubly_linked_list.print_list()
 my_doubly_linked_list.insert(4,4)
 
 
-my_doubly_linked_list.remove(4)
+print(my_doubly_linked_list.remove(4).value)
 
 print('\nDLL after insert(4) at end:')
 my_doubly_linked_list.print_list()
