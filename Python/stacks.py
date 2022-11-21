@@ -37,9 +37,9 @@ class Stack:
         return temp
 
 
-my_stack = Stack(1)
-my_stack.stack_push(2)
-my_stack.stack_push(3)
-my_stack.stack_pop()
-my_stack.stack_pop()
-my_stack.print_stack()
+# my_stack = Stack(1)
+# my_stack.stack_push(2)
+# my_stack.stack_push(3)
+# my_stack.stack_pop()
+# my_stack.stack_pop()
+# my_stack.print_stack()

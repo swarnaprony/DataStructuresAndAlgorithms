@@ -25,4 +25,4 @@ def check_perentheses(value):
 
 
 
-check_perentheses("astu, how are you doing())(")
+check_perentheses("astu, how are you doing())( ")
