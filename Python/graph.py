@@ -30,17 +30,12 @@ class Graph:
             return True
         return False
 
-    def remove_vertex(self, v):
-        for i in self.adj_list.keys():
-            if v in self.adj_list[i]:
-                self.adj_list[i].remove(v)
-        if v in self.adj_list:
-            try:
-                del self.adj_list[v]
-            except ValueError:
-                pass
+    def remove_vertex(self, vertex):
+        if vertex in self.adj_list:
+            for i in self.adj_list[vertex]:
+                self.adj_list[i].remove(vertex)
+            del self.adj_list[vertex]
             return True
-        
         return False
 
     
